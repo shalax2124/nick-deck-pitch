@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>HelloNancy × Nick Kyrgios — Phase 2: The Kyrious Ball</title>
+<style>
+  :root {
+    --pink: #ec008c;
+    --green: #c5f92e;
+    --yellow: #ffe600;
+    --black: #0a0a0a;
+    --off: #f6f5f1;
+    --gray: #888;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--off); color: var(--black); font-family: "Helvetica Neue", Arial, sans-serif; line-height: 1.55; }
+  img, video { max-width: 100%; height: auto; display: block; }
+  .display { font-family: "Impact", "Helvetica Neue", Arial, sans-serif; font-weight: 900; line-height: 0.95; text-transform: uppercase; }
+  .serif { font-family: "Georgia", serif; }
+  .label { display: inline-block; padding: 0.32rem 0.75rem; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 800; }
+
+  section { padding: 5rem 2rem; }
+  .narrow { max-width: 1100px; margin: 0 auto; }
+  section h2.display { font-size: clamp(40px, 7vw, 84px); margin: 0 0 1.2rem; }
+  .lede { font-size: 1.2rem; max-width: 720px; margin: 0 0 1.5rem; line-height: 1.5; }
+  .lede.serif { font-family: Georgia, serif; font-style: italic; color: #444; }
+
+  .bg-pink { background: var(--pink); color: white; }
+  .bg-pink h2 { color: white; }
+  .bg-green { background: var(--green); color: var(--black); }
+  .bg-black { background: var(--black); color: white; }
+  .bg-black h2 { color: white; }
+  .bg-off { background: var(--off); }
+
+  .hero { background: var(--black); color: white; padding: 4rem 2rem 5rem; }
+  .hero .topbar { background: var(--pink); margin: -4rem -2rem 4rem; padding: 0.85rem 2rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; display:flex; justify-content:space-between; align-items:center; }
+  .hero .topbar a { color: white; text-decoration: none; opacity: 0.85; }
+  .hero .topbar a:hover { opacity: 1; }
+  .hero .kick { text-align: center; color: var(--green); font-size: 0.78rem; letter-spacing: 0.32em; margin-bottom: 2rem; }
+  .hero h1.display { font-size: clamp(40px, 7vw, 100px); text-align: center; line-height: 1.0; max-width: 1200px; margin: 0 auto; }
+  .hero h1 .pink { color: var(--pink); }
+  .hero h1 .yellow { color: var(--yellow); }
+  .hero h1 .green { color: var(--green); }
+  .hero .pretty { text-align: center; color: var(--yellow); font-size: 0.74rem; letter-spacing: 0.36em; margin-top: 4rem; }
+
+  .image-hero { padding: 0; }
+  .image-hero .frame { display: block; width: 100%; max-height: 88vh; }
+  .image-hero figcaption { background: var(--black); color: white; padding: 1.5rem 2rem; font-family: Georgia, serif; font-style: italic; text-align: center; font-size: 1rem; }
+
+  .frame { background: black; border-radius: 6px; overflow: hidden; }
+  .frame img { width: 100%; display: block; }
+  .frame figcaption { color: #ccc; font-size: 0.78rem; padding: 0.6rem 0.85rem; font-family: Georgia, serif; font-style: italic; }
+
+  .grid-2 { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2.2rem; align-items: center; }
+  .grid-2.flip { grid-template-columns: 1fr 1.1fr; }
+  @media (max-width: 820px) { .grid-2, .grid-2.flip { grid-template-columns: 1fr; } }
+
+  .cta-box { background: var(--green); padding: 1.4rem 1.7rem; font-family: Georgia, serif; font-size: 1.1rem; line-height: 1.5; margin-top: 1.5rem; }
+  .cta-box b { font-family: 'Helvetica Neue', Arial; font-style: normal; }
+
+  .scenes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+  @media (max-width: 700px) { .scenes { grid-template-columns: 1fr; } }
+  .scene-card { background: black; border-radius: 6px; overflow: hidden; }
+  .scene-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+  .scene-card .body { padding: 1rem 1.1rem; color: white; }
+  .scene-card .num { font-family: Impact, sans-serif; color: var(--pink); font-size: 0.78rem; letter-spacing: 0.2em; }
+  .scene-card h4 { font-family: Impact, sans-serif; font-size: 1.15rem; margin: 0.3rem 0 0.4rem; letter-spacing: 0.01em; }
+  .scene-card p { font-family: Georgia, serif; font-style: italic; font-size: 0.88rem; color: #aaa; margin: 0; line-height: 1.45; }
+
+  .end-tag { padding: 6rem 2rem; background: var(--pink); color: white; text-align: center; }
+  .end-tag .serif { font-size: clamp(40px, 6vw, 64px); font-style: italic; }
+  .end-tag .display { font-size: clamp(80px, 14vw, 160px); color: var(--black); margin-top: 1rem; }
+  .end-tag .seal { width: 90px; height: 90px; border-radius: 50%; background: black; color: var(--yellow); font-family: Georgia, serif; font-style: italic; font-weight: 700; font-size: 2.6rem; line-height: 90px; margin: 2.5rem auto 1.5rem; }
+  .end-tag .foot { font-size: 0.75rem; letter-spacing: 0.3em; opacity: 0.85; }
+
+  footer { background: var(--black); color: #777; padding: 1.6rem 2rem; text-align: center; font-size: 0.75rem; letter-spacing: 0.04em; }
+  footer a { color: #aaa; text-decoration: none; border-bottom: 1px solid #333; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="topbar">
+    <span>HELLO NANCY × NICK KYRGIOS — PHASE 2</span>
+    <a href="index.html">← back to phase 1</a>
+  </div>
+  <p class="kick">SIX WEEKS AFTER THE HERO FILM</p>
+  <h1 class="display">
+    Nick <span class="yellow">strikes</span> back. <br/>
+    <span class="pink">The Kyrious Ball.</span>
+  </h1>
+  <p style="text-align:center;color:white;margin:3rem auto 0;max-width:840px;font-family:Georgia,serif;font-style:italic;font-size:1.4rem;line-height:1.5">
+    The "lawsuit" turns out to be the launch. Real product. His name on the box. The whole feud was always HelloNancy.
+  </p>
+  <p class="pretty">PHASE 2 — FOR YOUR EYES — ROUND 02</p>
+</section>
+
+<!-- THE TWIST -->
+<section class="bg-off">
+  <div class="narrow">
+    <span class="label" style="background:var(--pink);color:white">THE TURNAROUND</span>
+    <h2 class="display">Nick didn't sue.<br/><span style="color:var(--pink)">Nick invested.</span></h2>
+    <p class="lede serif">
+      For six weeks, the world genuinely believed Nick was at war with HelloNancy. Posts. Leaked letters. TMZ headlines. The internet picking sides.
+    </p>
+    <p class="lede">
+      Then a single press release: <b style="font-style:normal">"Nick Kyrgios joins HelloNancy as creative partner."</b>
+      He puts capital in. He's named on the cap table. He's helping the brand build their next product — and his name is on it.
+    </p>
+    <p class="lede">
+      The "feud" was him getting to know the brand. The audience clocks it. Nobody minds — they're already in on the joke. The product ships the morning the news drops.
+    </p>
+    <div class="cta-box">
+      <b>Three things Nick walks away with:</b> a stake in HelloNancy, a new product with his name on it, and a campaign film that lives on YouTube forever. <em>The "lawsuit" was the courtship.</em>
+    </div>
+  </div>
+</section>
+
+<!-- TEASER LADDER -->
+<section class="bg-black">
+  <div class="narrow">
+    <span class="label" style="background:transparent;color:var(--green)">THE REVEAL TEASERS</span>
+    <h2 class="display">Three teasers.<br/>Twenty-four hours apart.</h2>
+    <p class="lede serif" style="color:#ccc">Phase 1 was loud and chaotic. Phase 2 is the tonal opposite — quiet, confident, sensory. The tease is the inversion.</p>
+
+    <div class="scenes" style="grid-template-columns:repeat(3,1fr)">
+      <div class="scene-card">
+        <div style="aspect-ratio:16/10;background:linear-gradient(135deg,#1a1a1a,#0a0a0a);display:flex;align-items:center;justify-content:center;color:var(--green);font-family:Impact,sans-serif;font-size:1.6rem;text-align:center;padding:1rem">tomorrow<br/>everything<br/>changes.</div>
+        <div class="body">
+          <div class="num">DROP −2</div>
+          <h4>Tennis-ball texture macro</h4>
+          <p>Macro of fuzzy tennis-ball texture. 24-hour countdown. No face. No brand. Just the inversion of the lemon.</p>
+        </div>
+      </div>
+      <div class="scene-card">
+        <div style="aspect-ratio:16/10;background:radial-gradient(ellipse at center,#1a1a1a,#0a0a0a);display:flex;align-items:center;justify-content:center;color:white;font-family:Georgia,serif;font-style:italic;font-size:1.4rem;text-align:center;padding:1rem">you are served,<br/><span style="color:var(--yellow);font-style:normal">hellonancy.com</span></div>
+        <div class="body">
+          <div class="num">DROP −1</div>
+          <h4>Dark moody Nick + glowing ball</h4>
+          <p>Cinematic close-up. Nick cradling a glowing tennis ball. Fragrance-ad lighting. Tonal opposite of Phase 1's chaos.</p>
+        </div>
+      </div>
+      <div class="scene-card">
+        <div style="aspect-ratio:16/10;background:#0a0a0a;display:flex;align-items:center;justify-content:center;color:var(--pink);font-family:Impact,sans-serif;font-size:1.8rem;letter-spacing:0.04em">bye little LEMON</div>
+        <div class="body">
+          <div class="num">DROP 0</div>
+          <h4>Spotlit ball + reveal</h4>
+          <p>A tennis ball with a hole in it under a single spotlight. Apple-keynote drama. Then product page goes live.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HERO FILM — PT2 storyboards -->
+<section class="bg-pink">
+  <div class="narrow">
+    <span class="label" style="background:white;color:black">DROP 0 · THE HERO FILM</span>
+    <h2 class="display" style="color:white">An over-the-top<br/>American infomercial.</h2>
+    <p class="lede" style="color:white">
+      Nick "engineers" his own competitor product. Vision board reads <em>BEAT THE LEMON</em>. Whiteboard counter: <i>DAYS WITHOUT THINKING ABOUT THE LEMON: 0.</i>
+      He interviews 10,247 women. Meets a doctor with an anatomical diagram. Holds the perfect tennis-ball-headed wand to camera and says: <i>"I kept the 'N'. Because I'm Nick. Obviously."</i>
+    </p>
+
+    <div class="scenes">
+      <div class="scene-card" style="background:#0a0a0a">
+        <img src="assets/storyboard/lab.png" alt="The pleasure lab"/>
+        <div class="body">
+          <div class="num">SCENE 01</div>
+          <h4>The Pleasure Lab</h4>
+          <p>Vision board. Anti-lemon propaganda. "DAYS WITHOUT THINKING ABOUT THE LEMON: 0."</p>
+        </div>
+      </div>
+      <div class="scene-card" style="background:#0a0a0a">
+        <img src="assets/storyboard/lemon_chalkboard.png" alt="Chalkboard with conspiracy diagrams"/>
+        <div class="body">
+          <div class="num">SCENE 02</div>
+          <h4>The Research</h4>
+          <p>Chalkboard breakdown. "I interviewed 10,247 women." Conspiracy-board chic.</p>
+        </div>
+      </div>
+      <div class="scene-card" style="background:#0a0a0a">
+        <img src="assets/storyboard/packaging.png" alt="Kyrious Ball packaging"/>
+        <div class="body">
+          <div class="num">SCENE 03</div>
+          <h4>The Packaging</h4>
+          <p>"It's tall. It's minimal. It says 'I play to win, but I also respect typography.'"</p>
+        </div>
+      </div>
+      <div class="scene-card" style="background:#0a0a0a">
+        <img src="assets/storyboard/declaration.png" alt="Nick holding the Kyrious Ball like a trophy"/>
+        <div class="body">
+          <div class="num">SCENE 04</div>
+          <h4>The Declaration</h4>
+          <p>"You wanted a rally, HelloNancy? You got one. Tomorrow, everything changes. You're served."</p>
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:2rem;color:white"><b>Tagline:</b> <i style="font-family:Georgia,serif;font-size:1.2rem">Bye little lemon. You're served.</i></p>
+  </div>
+</section>
+
+<!-- THE PRODUCT -->
+<section class="bg-green">
+  <div class="narrow">
+    <span class="label" style="background:black;color:white">THE PRODUCT — REAL SKU</span>
+    <h2 class="display">A tennis-ball-headed wand.<br/>Yes, actually for sale.</h2>
+    <div class="grid-2" style="margin-top:2rem;align-items:flex-start">
+      <figure class="frame">
+        <img src="assets/storyboard/packaging.png" alt="Kyrious Ball box, V4 packaging"/>
+        <figcaption>Box · V4 · cream + lime, vertical "KYRIOUS", "N" stamp on the side</figcaption>
+      </figure>
+      <div>
+        <p class="lede serif" style="color:#1a1a1a;margin-top:0">
+          Cream, minimalist, blue vertical type, circular tennis-ball window. Nancy "N" on the side panel. The product itself: a smooth pastel-yellow wand base with a fuzzy tennis-ball head. Functional. Real packaging. Real fulfillment.
+        </p>
+        <ul style="font-family:Georgia,serif;color:#1a1a1a;line-height:1.7;font-style:italic">
+          <li><b style="font-style:normal">Real SKU.</b> Real launch. Real royalty.</li>
+          <li><b style="font-style:normal">Real packaging.</b> Real shelf presence at retail partners.</li>
+          <li><b style="font-style:normal">Real ad creative</b> — your name on the box, your face on the campaign.</li>
+        </ul>
+        <div class="cta-box" style="background:black;color:white;margin-top:1.5rem">
+          <b style="color:var(--yellow)">The audience already wants it.</b> Six weeks of "is Nick suing them?" turns into six minutes of "wait, IT'S A REAL PRODUCT?" — and then they buy it.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OOH -->
+<section class="bg-black">
+  <div class="narrow">
+    <span class="label" style="background:transparent;color:var(--green)">PHASE 2 OOH</span>
+    <h2 class="display">"Bye little LEMON."<br/>Big walls. Bigger reveal.</h2>
+    <p class="lede serif" style="color:#ccc">
+      We swap every Phase 1 OOH placement with the new Phase 2 art the morning the product goes live. Same walls — NYC, London, Melbourne — different tone. Phase 1 was Nick in his "LEMON SUCKS" tee. Phase 2 is Nick in a lab coat holding the box.
+    </p>
+    <div class="grid-2" style="margin-top:2rem">
+      <figure class="frame">
+        <img src="assets/storyboard/declaration.png" alt="Phase 2 OOH visual: Nick in lab coat with the Kyrious Ball box"/>
+        <figcaption>"bye little LEMON. tomorrow everything changes. you're served."</figcaption>
+      </figure>
+      <figure class="frame">
+        <img src="assets/storyboard/lab.png" alt="Phase 2 OOH alt: lab energy"/>
+        <figcaption>The lab as backdrop — for digital screens and wild postings.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT THIS UNLOCKS -->
+<section class="bg-off">
+  <div class="narrow">
+    <span class="label" style="background:var(--pink);color:white">WHAT PHASE 2 UNLOCKS</span>
+    <h2 class="display">A campaign that ships.<br/>And keeps shipping.</h2>
+    <ul style="font-family:Georgia,serif;font-style:italic;color:#444;font-size:1.1rem;line-height:1.8;max-width:820px">
+      <li><b style="font-style:normal">A real SKU</b> with Nick's name on the box — sold for years</li>
+      <li><b style="font-style:normal">A second hero film</b> that lives on YouTube forever</li>
+      <li><b style="font-style:normal">Phase 1 is suddenly recontextualized</b> — every old post becomes promo for the launch</li>
+      <li><b style="font-style:normal">Distribution moats</b>: retail partners want the SKU once they see the press cycle</li>
+      <li><b style="font-style:normal">The cultural moment</b> — Nick joins the Cera/Liquid Death tier of "athlete who pulled off a stunt"</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CLOSE -->
+<section class="end-tag">
+  <p class="serif">Bye little lemon.</p>
+  <p class="display">You're served.</p>
+  <div class="seal">N.</div>
+  <p class="foot">PHASE 2 · LET'S SHIP IT.</p>
+</section>
+
+<footer>
+  Phase 2 deck · v0.1 · <a href="index.html">← back to phase 1</a>
+</footer>
+
+</body>
+</html>
