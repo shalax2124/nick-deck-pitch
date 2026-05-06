@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Nick Deck — Reference for Dione</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a14;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 24px;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 640px;
+    width: 100%;
+  }
+  .label {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e879b9;
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+  .sub {
+    color: rgba(255,255,255,0.5);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .step {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .num {
+    background: linear-gradient(135deg, #a855f7, #e879b9);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.85);
+  }
+  .step-text strong { color: #fff; }
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 24px;
+  }
+  .ref-label {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-bottom: 10px;
+  }
+  .ref-link {
+    background: rgba(232,121,185,0.1);
+    border: 1px solid rgba(232,121,185,0.3);
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: #e879b9;
+    text-decoration: none;
+    display: block;
+    word-break: break-all;
+    transition: background 0.2s;
+  }
+  .ref-link:hover { background: rgba(232,121,185,0.18); }
+</style>
+</head>
+<body>
+<div class="card">
+  <p class="label">Nick Kyrgios Deck · Asset Update</p>
+  <h1>Right Phone — What to change</h1>
+  <p class="sub">For Dione · via Claude Code</p>
+
+  <div class="steps">
+    <div class="step">
+      <div class="num">1</div>
+      <div class="step-text">Upload <strong>r2_pov.mp4</strong> to <strong>assets/storyboard/</strong> in the repo</div>
+    </div>
+    <div class="step">
+      <div class="num">2</div>
+      <div class="step-text">Replace the <strong>right phone image</strong> with the video — the one under the LAD BIBLE section</div>
+    </div>
+    <div class="step">
+      <div class="num">3</div>
+      <div class="step-text">Remove the <strong>LIVE tag</strong> and <strong>Breaking News overlay</strong> on that phone</div>
+    </div>
+    <div class="step">
+      <div class="num">4</div>
+      <div class="step-text">Make sure the full video is <strong>entirely visible</strong> — nothing cropped</div>
+    </div>
+  </div>
+
+  <hr class="divider"/>
+
+  <p class="ref-label">Reference — how it should look</p>
+  <a class="ref-link" href="https://shalax2124.github.io/nick-deck-pitch/" target="_blank">
+    https://shalax2124.github.io/nick-deck-pitch/
+  </a>
+</div>
+</body>
+</html>
